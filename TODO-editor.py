@@ -91,7 +91,7 @@ def handle(event):
 
 
 while True:
-    with open(r"C:\Users\singh\Shubham and Kritika\Shubham\Python\_TODOS\TODO.txt", "r", encoding="utf8") as f:
+    with open(r"TODO.txt", "r", encoding="utf8") as f:
         contents_raw = f.read()
         contents = contents_raw
         for item in to_replace:
@@ -116,5 +116,5 @@ while True:
     length = max([len(item) for item in contents]) + 1
     todos = [item.ljust(length - 1) for item in contents[:-1]]
     lastitem = contents[-1].ljust(length - 1)
-    with open(r"C:\Users\singh\Shubham and Kritika\Shubham\Python\_TODOS\TODO.txt", "w", encoding="utf8") as f:
+    with open(r"TODO.txt", "w", encoding="utf8") as f:
         f.write(template.render(length=length, lastitem=lastitem, todos=todos))
